@@ -1,12 +1,3 @@
-<script setup>
-import { ref } from 'vue'
-
-defineProps({
-  msg: String
-})
-
-</script>
-
 <template>
   <div class="page p-1">
         <div class="card card-intro">
