@@ -14,7 +14,7 @@ createApp(App).mount('#app')
     touchMoveRegister();
 
     // 注册 contact 为 headroom
-    //contactBarRegister();
+    contactBarRegister();
 
     // 加载滚动注释
     bioUpdate();
@@ -26,11 +26,11 @@ createApp(App).mount('#app')
     consoleEgg();
 }
 
-// function contactBarRegister () {
-//     const contactCard = document.querySelector('.fixed-navigationbar');
-//     const contactCardHeadroom = new Headroom(contactCard);
-//     contactCardHeadroom.init();
-// }
+function contactBarRegister () {
+    const contactCard = document.querySelector(".fixed-navigationbar");
+    const contactCardHeadroom = new Headroom(contactCard);
+    contactCardHeadroom.init();
+}
 
 function bioUpdate() {
     const text = document.querySelector('.bio-text');

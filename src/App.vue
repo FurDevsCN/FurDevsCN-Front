@@ -3,13 +3,13 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import Page1 from './components/page1.vue';
 import Page2 from './components/page2.vue';
-import nav from './components/navigator.vue';
+import navigator from './components/navigator.vue';
 </script>
 
 <template>
   <Page1/>
   <Page2/>
-  <nav/>
+  <navigator/>
 </template>
 
 
