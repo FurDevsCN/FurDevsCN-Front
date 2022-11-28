@@ -1,9 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-
 createApp(App).mount('#app')
-
 
 /**
  * index.js
@@ -25,7 +23,6 @@ createApp(App).mount('#app')
     // 加载console彩蛋
     consoleEgg();
 }
-
 function contactBarRegister () {
     const contactCard = document.querySelector(".fixed-navigationbar");
     const contactCardHeadroom = new Headroom(contactCard);
@@ -106,13 +103,15 @@ async function loadMembers() {
         const aNode = document.createElement('a');
         aNode.setAttribute('href', `https://github.com/${memberItem.login}`);
         aNode.setAttribute('target', '_blank')
-
         // 图片
         const img1Node = document.createElement('img');
-        img1Node.setAttribute('src', `https://github-readme-stats-colour93.vercel.app/api?username=${memberItem.login}&locale=cn&show_avatar=true&show_icons=true`);
         const img2Node = document.createElement('img');
+        img1Node.setAttribute('src', `https://github-readme-stats-colour93.vercel.app/api?username=${memberItem.login}&locale=cn&show_avatar=true&show_icons=true`);
         img2Node.setAttribute('src', `https://github-readme-stats-colour93.vercel.app/api/top-langs/?username=${memberItem.login}&layout=compact&locale=cn`);
-
+        img1Node,img2Node.onerror=function(){
+            img1Node.setAttribute('style','display:none;')//出错隐藏
+            img2Node.setAttribute('style','display:none;')
+        }
         // 合并节点
         aNode.appendChild(img1Node);
         aNode.appendChild(img2Node);

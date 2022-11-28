@@ -6,7 +6,8 @@
             </div>
             <div class=" card card-member">
                 <div>
-                    <div class="card-member-list"></div>
+                    <div class="card-member-list">
+                    </div>
                     <div class="card-member-desc">
                         <p>排名按照进入组织顺序</p>
                         <p>统计信息卡片来自于 <a href="https://github.com/anuraghazra/github-readme-stats"
