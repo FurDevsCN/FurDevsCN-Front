@@ -24,7 +24,7 @@
         </div>
   </div>
 </template>
-<style scoped>
+<style>
 /* 第一页样式 */
 
 .p-1 {
@@ -57,7 +57,6 @@ p {
 }
 
 .contact {
-
   display: flex;
 }
 
@@ -104,7 +103,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(227, 239, 214, 0.8);
+  background: rgba(255, 255, 255, 0.55);
   z-index: 10001;
   transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, left 0.25s, opacity 0.25s, top 0.25s, width 0.25s, height 0.25s;
   pointer-events: all;
@@ -181,4 +180,3 @@ a.telegram {
   color: var(--gray-dark);
 }
 </style>
-

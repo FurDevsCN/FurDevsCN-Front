@@ -1,4 +1,4 @@
-name: build and deploy
+name: pages-build-deployment
 
 # 当 main 分支 push 代码的时候触发 workflow
 on:

@@ -1,5 +1,5 @@
 #
-<div align=center><img src="public/FurDevsCN.svg" width = "250" height = "300"></center>
+<div align=center><img src="/src/assets/FurDevsCN.svg" width = "250" height = "300"></center>
 <h1>FurDevsCN-Front</h1>
 </div>
 
