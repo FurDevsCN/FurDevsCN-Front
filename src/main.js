@@ -106,8 +106,8 @@ async function loadMembers() {
         // 图片
         const img1Node = document.createElement('img');
         const img2Node = document.createElement('img');
-        img1Node.setAttribute('src', `https://github-readme-stats-colour93.vercel.app/api?username=${memberItem.login}&locale=cn&show_avatar=true&show_icons=true`);
-        img2Node.setAttribute('src', `https://github-readme-stats-colour93.vercel.app/api/top-langs/?username=${memberItem.login}&layout=compact&locale=cn`);
+        img1Node.setAttribute('src', `https://github-readme-stats.furriesclub.online/api?username=${memberItem.login}&locale=cn&show_avatar=true&show_icons=true`);
+        img2Node.setAttribute('src', `https://github-readme-stats.furriesclub.online/api/top-langs/?username=${memberItem.login}&layout=compact&locale=cn`);
         img1Node,img2Node.onerror=function(){
             img1Node.setAttribute('style','display:none;')//出错隐藏
             img2Node.setAttribute('style','display:none;')
