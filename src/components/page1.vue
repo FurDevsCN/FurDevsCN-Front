@@ -179,4 +179,28 @@ a.telegram {
 .textcolor-gray {
   color: var(--gray-dark);
 }
+.card {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+  transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, left 0.25s, opacity 0.25s, top 0.25s, width 0.25s, height 0.25s;
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0 9px 46px 8px rgba(0, 0, 0, 0.12),
+    0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+/* 介绍卡片样式 */
+.card.card-intro {
+  /* flex 布局居中 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  max-width: 600px;
+  width: 40%;
+  min-height: 400px;
+}
 </style>

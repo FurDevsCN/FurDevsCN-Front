@@ -6,7 +6,11 @@ createApp(App).mount('#app')
 /**
  * index.js
  */
- window.onload = () => {
+window.onload = () => {
+    
+    //加载完成后删除动画
+    var box=document.getElementById("loader-wrapper");
+    box.remove();
 
     // 加载翻页
     touchMoveRegister();
