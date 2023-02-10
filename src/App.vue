@@ -1,8 +1,8 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Page1 from './components/page1.vue';
-import Page2 from './components/page2.vue';
+import Page1 from './index/page1.vue';
+import Page2 from './index/page2.vue';
 import navigator from './components/navigator.vue';
 </script>
 

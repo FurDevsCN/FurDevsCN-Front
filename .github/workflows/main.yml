@@ -30,10 +30,15 @@ jobs:
     # 打包构建
     - run: yarn build
 
+    - run: git config --global user.email "1581647952@qq.com"
+
+    - run: git config --global user.name "Silverowo"
+
     # 发布到 GitHub Pages
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
-      env:
-        PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 访问秘钥
-        PUBLISH_BRANCH: gh-pages # 推送分支
-        PUBLISH_DIR: ./public # 部署目录
+      run: cd dist
+      run: git init
+      run: git add .
+      run: git commit -m "Deploy"
+      run: git push
