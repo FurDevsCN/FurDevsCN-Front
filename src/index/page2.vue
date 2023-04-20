@@ -1,3 +1,31 @@
+<script>
+import members from '../components/members.vue'
+
+export default{
+  data(){
+    return{
+      memberList: {}
+    }
+  },
+  methods:{
+    async loadMembers(){
+      await axios.get("https://fur233.oss-cn-hangzhou.aliyuncs.com/common/members.json").then(this.handleMemberList);
+    },
+    handleMemberList(res){
+      const resp = res.data;
+      this.memberList = resp.data;
+    }
+  },
+  mounted() {
+    this.loadMembers();
+  },
+  components:{
+    members
+  }
+
+}
+
+</script>
 <template>
   <div class="page p-2">
         <div class="glass-card-background">
@@ -7,7 +35,11 @@
             <div class=" card card-member">
                 <div>
                     <div class="card-member-list">
+                      <div v-for="item of memberList">
+                        <members :memberItem = item />
+                      </div>
                     </div>
+                    
                     <div class="card-member-desc">
                         <strong>
                             <p>排名按照进入组织顺序</p>
@@ -69,15 +101,6 @@
   border-radius: 0;
   padding-top: 10px;
   box-shadow: none;
-}
-
-.card-member-list {
-  background-color: transparent;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-around;
 }
 
 .card.card-member::-webkit-scrollbar {

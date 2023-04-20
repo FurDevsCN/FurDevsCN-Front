@@ -9,8 +9,7 @@ createApp(App).mount('#app')
 window.onload = () => {
     
     //加载完成后删除动画
-    var box=document.getElementById("loader-wrapper");
-    box.remove();
+    document.getElementById("loader-wrapper").remove();
 
     // 加载翻页
     touchMoveRegister();
@@ -21,12 +20,10 @@ window.onload = () => {
     // 加载滚动注释
     bioUpdate();
 
-    // 加载成员
-    loadMembers();
-
     // 加载console彩蛋
     consoleEgg();
 }
+
 function contactBarRegister () {
     const contactCard = document.querySelector(".fixed-navigationbar");
     const contactCardHeadroom = new Headroom(contactCard);
@@ -82,48 +79,6 @@ function bioUpdate() {
         }
 
     }, 100)
-}
-
-async function loadMembers() {
-
-    // 获取父卡片元素
-    const card = document.querySelector(".card-member-list");
-
-    // 获取数据
-    const memberList = await axios.get("https://fur233.oss-cn-hangzhou.aliyuncs.com/common/members.json").then(res => res.data.data);
-
-    for (let i = 0; i < memberList.length; i++) {
-        const memberItem = memberList[i];
-        
-        // 创建游离节点
-        const newDiv = document.createElement('div');
-
-        // 添加类
-        newDiv.setAttribute('class', 'card-member-item');
-
-        // 创建内部节点
-
-        // 链接
-        const aNode = document.createElement('a');
-        aNode.setAttribute('href', `https://github.com/${memberItem.login}`);
-        aNode.setAttribute('target', '_blank')
-        // 图片
-        const img1Node = document.createElement('img');
-        const img2Node = document.createElement('img');
-        img1Node.setAttribute('src', `https://github-readme-stats.furriesclub.online/api?username=${memberItem.login}&locale=cn&show_avatar=true&show_icons=true`);
-        img2Node.setAttribute('src', `https://github-readme-stats.furriesclub.online/api/top-langs/?username=${memberItem.login}&layout=compact&locale=cn`);
-        img1Node,img2Node.onerror=function(){
-            img1Node.setAttribute('style','display:none;')//出错隐藏
-            img2Node.setAttribute('style','display:none;')
-        }
-        // 合并节点
-        aNode.appendChild(img1Node);
-        aNode.appendChild(img2Node);
-        newDiv.appendChild(aNode);
-
-        // 插入文档
-        card.appendChild(newDiv);
-    }
 }
 
 function consoleEgg() {
