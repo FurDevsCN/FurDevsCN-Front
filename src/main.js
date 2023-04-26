@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
+import axios from 'axios'
 createApp(App).mount('#app')
 
 /**
@@ -22,6 +23,12 @@ window.onload = () => {
 
     // 加载console彩蛋
     consoleEgg();
+}
+
+async function getCommitID(){
+    const res = await axios.get("https://api.github.com/repos/FurDevsCN/FurDevsCN-Front/commits");
+    const resp = res.data["0"].sha.slice(0,7)
+    return resp
 }
 
 function contactBarRegister () {
@@ -81,7 +88,7 @@ function bioUpdate() {
     }, 100)
 }
 
-function consoleEgg() {
+async function consoleEgg() {
 
     const styleTitle1 = "font-size: 20px; font-weight: 600; color: rgb(244,167,89);"
     const styleTitle2 = "font-style: oblique; font-size:14px; color: rgb(244,167,89); font-weight: 400;"
@@ -93,8 +100,10 @@ function consoleEgg() {
 
     // => 读取配置型（在配置文件里配置这些会变动的网址）
     const offiUrl = 'https://furdevs.cn'
+    const commitID = {}
+
     const content = `
-        版 本 号：1.0.0    
+        版 本 号：${await getCommitID()}   
         欸？你发现了一个彩蛋？
         🏠官网:  ${offiUrl}
     `
