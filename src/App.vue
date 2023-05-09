@@ -1,17 +1,17 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Page1 from './index/page1.vue';
-import Page2 from './index/page2.vue';
-import navigator from './components/navigator.vue';
-import loader from './components/loader.vue'
+import IntroPage from './views/IntroView.vue';
+import CardPage from './views/CardView.vue';
+import NavigatorBar from './components/NavigationBar.vue';
+import LoaderWrapper from './components/LoadWrapper.vue'
 </script>
 
 <template>
-  <loader/>
-  <Page1/>
-  <Page2/>
-  <navigator/>
+  <LoaderWrapper/>
+  <IntroPage/>
+  <CardPage/>
+  <NavigatorBar/>
 </template>
 
 <style type="text/css">

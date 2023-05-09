@@ -1,5 +1,5 @@
 <script>
-import members from '../components/members.vue'
+import Members from '../components/MemberItem.vue'
 
 export default{
   data(){
@@ -20,7 +20,7 @@ export default{
     this.loadMembers();
   },
   components:{
-    members
+    Members
   }
 
 }
@@ -36,7 +36,7 @@ export default{
                 <div>
                     <div class="card-member-list">
                       <div v-for="item of memberList">
-                        <members :memberItem = item />
+                        <Members :memberItem = item />
                       </div>
                     </div>
                     
