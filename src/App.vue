@@ -21,7 +21,7 @@ import LoaderWrapper from './components/LoadWrapper.vue'
 body {
   width: 100%;
   height: 100%;
-  background: url(https://www.todaybing.com/api/today/cn) no-repeat center center fixed;
+  background: url(https://imgapi.cn/bing.php?rand=true) no-repeat center center fixed;
   z-index: -1;
   -moz-background-size: cover;
   /*背景图片拉伸以铺满全屏*/

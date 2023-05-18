@@ -190,7 +190,7 @@ a.telegram {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 550px;
+  min-width: 280px;
   max-width: 800px;
   width: 40%;
   min-height: 410px;

@@ -1,6 +1,5 @@
 <script>
 import Members from '../components/MemberItem.vue'
-
 export default{
   data(){
     return{
@@ -129,7 +128,11 @@ export default{
 }
 
 .card-member-item img {
-  width: 100%;
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  padding-left: 10%;
 }
 
 .card-member-item {

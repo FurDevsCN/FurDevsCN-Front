@@ -8,10 +8,7 @@
 </template>
 
 <style type="text/css" scoped>
-.chromeframe {
-    color: #000;
-    padding: 0.2em 0;
-}
+
 #loader-wrapper {
       position: fixed;
       top: 0;
