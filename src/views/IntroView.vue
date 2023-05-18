@@ -1,20 +1,20 @@
 <template>
   <div class="page p-1">
-        <div class="card card-intro">
-            <div class="logo">
-                <p style="text-align: center;">
-                  <span>
-                    <img src="../assets/FurDevsCN.svg" />
-                  </span>
-                </p>
-                <span>FurDevsCN</span>
-            </div>
-            <div class="bio">
-                <span>/* </span>
-                <p class="bio-text">_</p>
-                <span> */</span>
-            </div>
-        </div>
+    <div class="card card-intro">
+      <div class="logo">
+        <p style="text-align: center">
+          <span>
+            <img src="../assets/FurDevsCN.svg" />
+          </span>
+        </p>
+        <span>FurDevsCN</span>
+      </div>
+      <div class="bio">
+        <span>/* </span>
+        <p class="bio-text">_</p>
+        <span> */</span>
+      </div>
+    </div>
   </div>
 </template>
 <style>
@@ -63,7 +63,7 @@ p {
   background-color: rgb(205, 217, 191, 0);
   padding: 15px;
   border-radius: 25px;
-  transition: .25s;
+  transition: 0.25s;
   transition-property: all;
   transition-duration: 0.25s;
   transition-timing-function: ease;
@@ -72,7 +72,7 @@ p {
 
 .contact a:hover {
   background-color: rgba(205, 217, 191, 0.8);
-  transition: .25s;
+  transition: 0.25s;
   transition-property: all;
   transition-duration: 0.25s;
   transition-timing-function: ease;
@@ -97,7 +97,8 @@ p {
   align-items: center;
   background: rgba(255, 255, 255, 0.55);
   z-index: 10001;
-  transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, left 0.25s, opacity 0.25s, top 0.25s, width 0.25s, height 0.25s;
+  transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, left 0.25s,
+    opacity 0.25s, top 0.25s, width 0.25s, height 0.25s;
   pointer-events: all;
 }
 
@@ -147,7 +148,7 @@ a.telegram {
 }
 
 .bio-text::after {
-  content: " ";
+  content: ' ';
   position: absolute;
   right: -6px;
   top: 5px;
@@ -157,7 +158,6 @@ a.telegram {
 }
 
 @keyframes insert {
-
   0%,
   100% {
     background-color: var(--gray);
@@ -178,10 +178,10 @@ a.telegram {
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(5px);
   z-index: 10000;
-  transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, left 0.25s, opacity 0.25s, top 0.25s, width 0.25s, height 0.25s;
+  transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, left 0.25s,
+    opacity 0.25s, top 0.25s, width 0.25s, height 0.25s;
   box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
-    0 9px 46px 8px rgba(0, 0, 0, 0.12),
-    0 11px 15px -7px rgba(0, 0, 0, 0.2);
+    0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
 /* 介绍卡片样式 */
 .card.card-intro {

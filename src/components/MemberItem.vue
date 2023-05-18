@@ -1,24 +1,24 @@
 <script>
 export default {
   props: {
-    memberItem: Object,
+    memberItem: Object
   },
-  data(){
+  data() {
     return {
-        stat: `https://github-readme-stats.furriesclub.online/api?username=${this.memberItem.login}&locale=cn&show_avatar=true&show_icons=true`,
-        mostUse: `https://github-readme-stats.furriesclub.online/api/top-langs/?username=${this.memberItem.login}&layout=compact&locale=cn`,
-        githubURL: `https://www.github.com/${this.memberItem.login}`
+      stat: `https://github-readme-stats.furriesclub.online/api?username=${this.memberItem.login}&locale=cn&show_avatar=true&show_icons=true`,
+      mostUse: `https://github-readme-stats.furriesclub.online/api/top-langs/?username=${this.memberItem.login}&layout=compact&locale=cn`,
+      githubURL: `https://www.github.com/${this.memberItem.login}`
     }
   }
 }
 </script>
 <template>
-        <div class = "card-member-item">
-            <a :href = githubURL target = "_blank">
-                <img :src = "stat">
-                <img :src = "mostUse">
-            </a>
-        </div>
+  <div class="card-member-item">
+    <a :href="githubURL" target="_blank">
+      <img :src="stat" />
+      <img :src="mostUse" />
+    </a>
+  </div>
 </template>
 
 <style>

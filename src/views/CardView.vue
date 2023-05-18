@@ -1,56 +1,63 @@
 <script>
+import axios from 'axios'
 import Members from '../components/MemberItem.vue'
-export default{
-  data(){
-    return{
+export default {
+  data() {
+    return {
       memberList: {}
     }
   },
-  methods:{
-    async loadMembers(){
-      await axios.get("https://fur233.oss-cn-hangzhou.aliyuncs.com/common/members.json").then(this.handleMemberList);
+  methods: {
+    async loadMembers() {
+      this.handleMemberList(
+        await axios.get(
+          'https://fur233.oss-cn-hangzhou.aliyuncs.com/common/members.json'
+        )
+      )
     },
-    handleMemberList(res){
-      const resp = res.data;
-      this.memberList = resp.data;
+    handleMemberList({ data: resp }) {
+      this.memberList = resp.data
     }
   },
   mounted() {
-    this.loadMembers();
+    this.loadMembers()
   },
-  components:{
+  components: {
     Members
   }
-
 }
-
 </script>
 <template>
   <div class="page p-2">
-        <div class="glass-card-background">
-            <div class="p-2-actionbar">
-                <div class="actionbar" style="height: 6px;"></div>
+    <div class="glass-card-background">
+      <div class="p-2-actionbar">
+        <div class="actionbar" style="height: 6px"></div>
+      </div>
+      <div class="card card-member">
+        <div>
+          <div class="card-member-list">
+            <div v-for="item of memberList" :key="item">
+              <Members :memberItem="item" />
             </div>
-            <div class=" card card-member">
-                <div>
-                    <div class="card-member-list">
-                      <div v-for="item of memberList">
-                        <Members :memberItem = item />
-                      </div>
-                    </div>
-                    
-                    <div class="card-member-desc">
-                        <strong>
-                            <p>排名按照进入组织顺序</p>
-                            <p>统计信息卡片来自于由玖叁魔改后的 <a
-                                href="https://github.com/colour93/github-readme-stats"
-                                target="_blank">colour93/github-readme-stats</a></p>
-                        </strong>
-                    </div>
-                </div>
-            </div>
+          </div>
+
+          <div class="card-member-desc">
+            <strong>
+              <p>排名按照进入组织顺序</p>
+              <p>
+                统计信息卡片来自于由玖叁魔改后的
+                <a
+                  href="https://github.com/colour93/github-readme-stats"
+                  target="_blank"
+                  >colour93/github-readme-stats</a
+                >
+              </p>
+            </strong>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 <style>
 /* 第二页样式 */
@@ -60,7 +67,6 @@ export default{
   justify-content: center;
   height: 100%;
   background-color: transparent;
-
 }
 /* 操作栏 */
 .p-2-actionbar {
@@ -85,8 +91,7 @@ export default{
   backdrop-filter: blur(5px);
   border-radius: 1rem 1rem 0rem 0rem;
   box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
-    0 9px 46px 8px rgba(0, 0, 0, 0.12),
-    0 11px 15px -7px rgba(0, 0, 0, 0.2);
+    0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
 
 .card.card-member {
@@ -120,7 +125,6 @@ export default{
   /* 滚动条里面的滑块 */
   background-color: rgba(113, 113, 113, 0.6);
   border-radius: 10px;
-
 }
 
 .card.card-member::-webkit-scrollbar-thumb:hover {
@@ -146,6 +150,6 @@ export default{
 
 .card-member-desc a {
   text-decoration: none;
-  color: var(--link-blue)
+  color: var(--link-blue);
 }
 </style>
