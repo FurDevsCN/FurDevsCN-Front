@@ -18,22 +18,6 @@ window.addEventListener(
     passive: true
   }
 )
-// window.onload = () => {
-//   //加载完成后删除动画
-//   document.getElementById('loader-wrapper').remove()
-
-//   // 加载翻页
-//   touchMoveRegister()
-
-//   // 注册 contact 为 headroom
-//   contactBarRegister()
-
-//   // 加载滚动注释
-//   bioUpdate()
-
-//   // 加载console彩蛋
-//   consoleEgg()
-// }
 /**
  * 获得最后一次的 commit id。
  * @returns {Promise<string>} commit id

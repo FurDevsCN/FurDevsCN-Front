@@ -1,7 +1,10 @@
 <script>
 import axios from 'axios'
-import Members from '../components/MemberItem.vue'
+import { defineAsyncComponent } from 'vue'
 export default {
+  components: {
+    Members: defineAsyncComponent(() => import('../components/MemberItem.vue'))
+  },
   data() {
     return {
       memberList: {}
@@ -21,9 +24,6 @@ export default {
   },
   mounted() {
     this.loadMembers()
-  },
-  components: {
-    Members
   }
 }
 </script>
