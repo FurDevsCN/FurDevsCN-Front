@@ -3,7 +3,9 @@ import axios from 'axios'
 import { defineAsyncComponent } from 'vue'
 export default {
   components: {
-    Members: defineAsyncComponent(() => import('../components/MemberItem.vue'))
+    Members: defineAsyncComponent(() =>
+      import('../components/MemberItem.vue')
+    )
   },
   data() {
     return {
